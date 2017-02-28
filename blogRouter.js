@@ -20,22 +20,24 @@ router.get('/', (req, res) => {
     res.status(200).json(blogPosts.get());
 });
 
+// use forEach and map... use validate(arr) function
 router.post('/', jsonParser, (req, res) => {
     const requiredFields = ['author', 'title', 'content'];
     for (let i=0; i < requiredFields.length; i++) {
         const field = requiredFields[i];
         if (!(field in req.body)) {
-            const message = `Missing \`${field}\` in request body`
+            const message = `Missing \`${field}\` in request body`;
             console.error(message);
             return res.status(400).send(message);
         }
     }
     
+    // edit: use obj destructuring
     const newBlog = blogPosts.create(
         req.body.author, req.body.title,req.body.content, req.body.publishDate || Date()
     );
     console.log('created new post');
-    res.status(200).json(newBlog);
+    res.status(201).json(newBlog);
 });
 
 router.delete('/:id', (req, res) => {
@@ -57,6 +59,8 @@ router.put('/:id', jsonParser, (req, res) => {
         console.log(`params id and request id don't match`);
         return res.status(400).send(`params id and request id don't match`);
     }
+
+    //use obj destructuring
     const updatedPost = blogPosts.update({
         author: req.body.author,
         title: req.body.title,
