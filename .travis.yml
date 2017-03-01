@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: IrTs9wBS4jBOC+KdvFJo+vuwhXtJc9HrX/3epJ92cNqM2ja9Azk5AuJJlzBvcKCSPG9Z8vFWklPmTbfg2KXDfxTPLVCB/bf2sdodTJUE4visAa1tcNdMYPqrKZFIc0JT/YqknGvqgiY3nsxxXSd59sVXCNkqnB6gzz98vfELxXkuDfX8bpWFrb3Tr4+EznbBNt+19T+6oYfqb/uGGAgkA6FKAZWjc5u8d/DfhY0BZZI/RdV6C3iITZ9yCtVbQKvWsCjgbN2xmvjzRXyPDuO4owLSDY3v1+vImm6lGNC1K7ap8yzoN16cQNxP/V5j1DFLVc3GfLnO51cbxfHUbK+RSgsYUnvSqmcKHPsu5gjeI4/1BOquc1Tq/sMw/cQ8kLygf/pjMfywARwIHvIq0C9Q2f8rXbq2RaNV3bikfK0k4UjZgsM+bs68OjUY2JjG3luueNNaCqICrAb6v01rrLpDIvqlSRc5y56+lKHch01qLnYmSDQDaIokh96EHnjtbvmTvpdIoaD+gUZMHh0a9hZbMVDmi0G9VELSEoUU+m3Wo9tBb1IbYKUY3GbHvodIF+pZPXa44nta80Mmz309Wu2ORV+IPYdYuBJu2uKQBFzbiTqU13HexTClvteFV4VJm9NhOyumEOuJRkkRJJ66Rtf/3VF46CrKRC1zUfHFhE1+0Yc=
+  app: whispering-peak-81491
+  on: 
+    repo: anhhtle/Blog-API
